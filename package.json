@@ -1,0 +1,17 @@
+{
+  "name": "gitbook-plugin-json",
+  "version": "0.0.1",
+  "description": "Gitbook plugin to generate ebook in JSON format.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "engines": {
+    "gitbook": "*"
+  },
+  "keywords": [
+    "gitbook"
+  ],
+  "author": "Pomin Wu <pomin5@gmail.com>",
+  "license": "MIT"
+}
