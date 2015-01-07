@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-json",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Gitbook plugin to generate ebook in JSON format.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/pm5/gitbook-plugin-json.git"
   },
-  "license": "MIT",
+  "license": "Apache 2",
   "bugs": {
     "url": "https://github.com/pm5/gitbook-plugin-json/issues"
   },
