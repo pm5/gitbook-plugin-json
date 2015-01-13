@@ -50,7 +50,7 @@ module.exports = {
             });
             fs.writeFileSync(config.output, "\ufeff" + JSON.stringify(book));
         },
-        "page": function(page) {
+        "page:after": function(page) {
             var section = parseNode(1, page.sections[0].content);
             section.path = page.path;
             book.unshift(section);
