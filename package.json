@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-json",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Gitbook plugin to generate ebook in JSON format.",
   "main": "index.js",
   "scripts": {
