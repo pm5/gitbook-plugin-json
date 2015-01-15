@@ -4,7 +4,7 @@ var fs = require("fs");
 var config, book;
 
 function headingRE(i) {
-    return new RegExp("<h" + i + ".*?>(.*?)</h" + i + ">", "g");
+    return new RegExp("<h" + i + "[\\s\\S]*?>([\\s\\S]*?)</h" + i + ">", "g");
 };
 
 function parseNode(heading, text) {
