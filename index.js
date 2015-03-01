@@ -48,7 +48,9 @@ module.exports = {
                 if (b.path === "README.md") return 1;
                 return a.path < b.path ? -1 : 1;
             });
-            fs.writeFileSync(config.output, "\ufeff" + JSON.stringify(book));
+            fs.writeFileSync(config.output, JSON.stringify(book, null, 2).replace(/[\u007f-\uffff]/g, function(it) {
+                return '\\u'+('0000'+it.charCodeAt(0).toString(16)).slice(-4);
+            }));
         },
         "page:after": function(page) {
             var section = parseNode(1, page.sections[0].content);
