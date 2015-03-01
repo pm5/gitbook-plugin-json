@@ -1,6 +1,7 @@
 'use strict'
 
 var fs = require("fs");
+var naturalSort = require("javascript-natural-sort");
 var config, book;
 
 function headingRE(i) {
@@ -42,11 +43,10 @@ module.exports = {
             config.output = config.output || "output.json";
         },
         "finish": function() {
-            // Don't know why gitbook does not parse by order
             book.sort(function (a, b) {
                 if (a.path === "README.md") return -1;
                 if (b.path === "README.md") return 1;
-                return a.path < b.path ? -1 : 1;
+                return naturalSort(a.path, b.path);
             });
             fs.writeFileSync(config.output, JSON.stringify(book, null, 2).replace(/[\u007f-\uffff]/g, function(it) {
                 return '\\u'+('0000'+it.charCodeAt(0).toString(16)).slice(-4);
