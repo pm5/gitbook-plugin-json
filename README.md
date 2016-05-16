@@ -2,6 +2,8 @@
 Gitbook JSON Plugin
 ===================
 
+![](https://travis-ci.org/pm5/gitbook-plugin-json.svg?branch=master)
+
 Gitbook plugin to generate ebook in JSON format.
 
 Usage
