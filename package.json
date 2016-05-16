@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/pm5/gitbook-plugin-json.git"
   },
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/pm5/gitbook-plugin-json/issues"
   },
