@@ -1,7 +1,6 @@
 'use strict'
 
 var fs = require("fs");
-var naturalSort = require("javascript-natural-sort");
 var config, book;
 
 function headingRE(i) {
@@ -37,22 +36,15 @@ function parseNode(heading, text) {
 
 module.exports = {
     hooks: {
-        "init": function() {
+        "init": function () {
             book = [];
             config = this.options.pluginsConfig.json;
             config.output = config.output || "output.json";
         },
-        "finish": function() {
-            book.sort(function (a, b) {
-                if (a.path === "README.md") return -1;
-                if (b.path === "README.md") return 1;
-                return naturalSort(a.path, b.path);
-            });
-            fs.writeFileSync(config.output, JSON.stringify(book, null, 2).replace(/[\u007f-\uffff]/g, function(it) {
-                return '\\u'+('0000'+it.charCodeAt(0).toString(16)).slice(-4);
-            }));
+        "finish": function () {
+            fs.writeFileSync(config.output, JSON.stringify(book, null, 2));
         },
-        "page:after": function(page) {
+        "page": function (page) {
             var section = parseNode(1, page.sections[0].content);
             section.path = page.path;
             book.unshift(section);
